@@ -65,13 +65,13 @@ const Days: React.FC<Props> = ({
                 className = ` ${BG_COLOR["500"][primaryColor]} text-white font-medium ${
                     dayjs(fullDay).isSame(dayHover) && !period.end
                         ? "rounded-full"
-                        : "rounded-l-full"
+                        : "rounded-s-full"
                 }`;
             } else if (dayjs(fullDay).isSame(period.end)) {
                 className = ` ${BG_COLOR["500"][primaryColor]} text-white font-medium ${
                     dayjs(fullDay).isSame(dayHover) && !period.start
                         ? "rounded-full"
-                        : "rounded-r-full"
+                        : "rounded-e-full"
                 }`;
             }
 
@@ -117,7 +117,7 @@ const Days: React.FC<Props> = ({
             if (dayHover === fullDay) {
                 const bgColor = BG_COLOR["500"][primaryColor];
                 className = ` transition-all duration-500 text-white font-medium ${bgColor} ${
-                    period.start ? "rounded-r-full" : "rounded-l-full"
+                    period.start ? "rounded-e-full" : "rounded-s-full"
                 }`;
             }
 
